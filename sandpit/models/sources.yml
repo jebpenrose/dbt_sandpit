@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: ingest
+    database: sandpit
+    schema: ingest
+    tables:
+      - name: spending
+        description: "Historic import of Jeb's 10'ish year old Excel spreadsheet, as .csv"
+      - name: txns_westpac
+      - name: txns_ing
+        description: "All transactions from ING, for both Jeb & Yvette's accounts. Which account each transaction came from must be inferred - using the file_id and examining the batch helps."
+      - name: txns_anz
+      - name: txns_nab
+      - name: transaction_assignment
+        description: "When other bank accounts upload unique narrative that do not automatically classify, they are extracted, assigned manually, and then uploaded to THIS table."
